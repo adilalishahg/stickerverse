@@ -15,7 +15,7 @@ const images = [
 
 const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => {
   return (
-    <div className="overflow-hidden whitespace-nowrap w-full">
+    <div className="overflow-hidden whitespace-nowrap container">
       <div
         className={`flex gap-10 w-max ${
           reverse ? "marquee-right" : "marquee-left"
