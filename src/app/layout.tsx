@@ -32,7 +32,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main className="relative min-h-screen overflow-hidden">
+        <main className="relative min-h-screen overflow-hidden pt-8">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-no-repeat bg-top z-20"
@@ -40,10 +40,10 @@ export default function RootLayout({
           />
 
           {/* Overlay (optional) */}
-          <div className="absolute inset-0 bg-[#126f94] z-10" />
+          <div className="absolute inset-0 bg-[#0085ff] z-10" />
 
           {/* Content */}
-          <div className="relative z-20 flex justify-center items-center min-h-screen mt-10">
+          <div className="relative z-20 flex justify-center items-center min-h-screen mt-16">
             <div className="flex flex-col items-center gap-4 text-white">
               <Image
                 src="/images/logo/stickerverse-logo-full-white.png"

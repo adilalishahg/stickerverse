@@ -15,21 +15,24 @@ const images = [
 
 const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => {
   return (
-    <div className="overflow-hidden whitespace-nowrap container">
+    <div className="w-full overflow-hidden">
       <div
-        className={`flex gap-10 w-max ${
-          reverse ? "marquee-right" : "marquee-left"
-        }`}
+        className={`flex items-center gap-10 w-max ${reverse ? "marquee-right" : "marquee-left"
+          }`}
       >
-        {/* Duplicate for seamless loop */}
         {[...images, ...images].map((src, index) => (
-          <div key={index} className="shrink-0">
+          <div
+            key={index}
+            className="shrink-0 flex items-center justify-center"
+          >
+            {/* ✅ FIXED HEIGHT BADGE */}
             <Image
               src={src}
               alt="tag"
-              width={120}
-              height={60}
-              className="opacity-80 hover:opacity-100 transition"
+              width={200}   // just for next/image requirement
+              height={60}   // just for next/image requirement
+              className="h-11.5 w-auto object-contain opacity-90 hover:opacity-120 transition"
+              unoptimized
             />
           </div>
         ))}
@@ -40,11 +43,8 @@ const MarqueeRow = ({ reverse = false }: { reverse?: boolean }) => {
 
 const MarqueeTags = () => {
   return (
-    <div className="flex flex-col gap-6 py-10">
-      {/* Row 1 → Left */}
+    <div className="flex flex-col gap-6 py-8">
       <MarqueeRow />
-
-      {/* Row 2 → Right */}
       <MarqueeRow reverse />
     </div>
   );
